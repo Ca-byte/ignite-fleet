@@ -27,10 +27,12 @@ export function SignIn() {
       if(idToken) {
 
       } else {
+
         Alert.alert('Sign in', "Unable to connect to your google account.")
         setIsAuthenticanting(false)  
       }
     } catch (error) {
+      
       console.log(error)
       Alert.alert('Sign in', "Unable to connect to your google account.")
       setIsAuthenticanting(false)

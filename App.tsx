@@ -8,11 +8,8 @@ import { SignIn } from './src/screens/SignIn';
 import theme from './src/theme';
 
 export default function App() {
-  
-  
   const realmAppId = process.env.EXPO_PUBLIC_REALM_APP_ID;
 
-  console.log("REALM_APP_ID:", realmAppId);
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold

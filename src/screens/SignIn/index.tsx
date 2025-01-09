@@ -6,10 +6,11 @@ import backgroundImg from '../../assets/background.png';
 import { Button } from '../../components/Button';
 import { Container, Slogan, Title } from './styles';
 
-
 GoogleSignin.configure({
   scopes: ["email", "profile", "openid"],
+  // @ts-ignore
   iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
+   // @ts-ignore
   webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
 });
 

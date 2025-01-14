@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import styled from 'styled-components/native';
-
+// @ts-ignore
 export const Container = styled.View`
 	width: 100%;
 	padding: 32px;
@@ -17,11 +17,13 @@ export const Message = styled.Text`
 	font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
 `;
+
 export const Name = styled.Text`
 	color: ${({ theme }) => theme.COLORS.GRAY_100};
 	font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
 `;
+// @ts-ignore
 export const Picture = styled(Image)`
   width: 54px;
   height: 54px;

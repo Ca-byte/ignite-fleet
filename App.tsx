@@ -3,7 +3,7 @@ import { AppProvider, UserProvider } from '@realm/react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { Loading } from './src/components/Loading';
-import { Home } from './src/screens/Home';
+import { Routes } from './src/routes';
 import { SignIn } from './src/screens/SignIn';
 import theme from './src/theme';
 
@@ -28,7 +28,7 @@ export default function App() {
           translucent 
         />
         <UserProvider fallback={SignIn}>
-          <Home />
+        <Routes />
         </UserProvider>
       </ThemeProvider>
     </AppProvider>

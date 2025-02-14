@@ -1,5 +1,5 @@
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
-import { AppProvider, UserProvider } from '@realm/react';
+import { AppProvider, RealmProvider, UserProvider } from '@realm/react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
@@ -9,8 +9,13 @@ import { SignIn } from './src/screens/SignIn';
 import theme from './src/theme';
 
 export default function App() {
-  const realmAppId = process.env.EXPO_PUBLIC_REALM_APP_ID;
+  const realmAppId: string | undefined = process.env.EXPO_PUBLIC_REALM_APP_ID;
 
+
+  if (!realmAppId) {
+    throw new Error("Missing EXPO_PUBLIC_REALM_APP_ID environment variable.");
+  }
+  
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold
@@ -31,6 +36,9 @@ export default function App() {
           />
           <UserProvider fallback={SignIn}>
           <Routes />
+          <RealmProvider>
+              <Routes />
+            </RealmProvider>
           </UserProvider>
         </SafeAreaProvider>
       </ThemeProvider>
